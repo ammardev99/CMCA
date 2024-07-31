@@ -1,3 +1,4 @@
+import 'package:cmca/models/estimate_model.dart';
 import 'package:cmca/utils/color.dart';
 import 'package:cmca/widgets/estimate_card.dart';
 import 'package:cmca/widgets/formatting.dart';
@@ -15,27 +16,28 @@ class _CMCAState extends State<CMCA> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: AppColors.primary,
-          title: appHeading("Civil Material Cost Analysis", AppColors.white),
-          centerTitle: true,
-        ),
-        body: SingleChildScrollView(
+          appBar: AppBar(
+            backgroundColor: AppColors.primary,
+            title: appHeading("Civil Material Cost Analysis", AppColors.white),
+            centerTitle: true,
+          ),
+          body: SingleChildScrollView(
             scrollDirection: Axis.vertical,
             physics: const BouncingScrollPhysics(),
             padding: const EdgeInsets.all(15),
-            child: Column(
-              children: [
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      estimateCard('label', 'assets/png/app_icon.png'),
-                      estimateCard('label', 'assets/png/app_icon.png'),
-                    ]),
-              ],
-            )),
-      ),
+            child: GridView.builder(
+              itemCount: estimateOption.length,
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                maxCrossAxisExtent: 250,
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10,
+              ),
+              itemBuilder: (context, index) =>
+                  estimateOptionCard(estimateOption[index]),
+            ),
+          )),
     );
   }
 }

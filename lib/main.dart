@@ -4,6 +4,7 @@ import 'package:cmca/utils/color.dart';
 import 'package:cmca/widgets/formatting.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'AmmarDev99',
       theme: ThemeData(
