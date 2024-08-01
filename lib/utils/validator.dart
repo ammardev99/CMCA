@@ -1,7 +1,7 @@
 
 String? validateValue(String? value) {
   if ((value ?? "").isEmpty) {
-    return 'is required';
+    return 'required';
   }
   return null;
 }

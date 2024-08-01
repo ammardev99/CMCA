@@ -7,17 +7,23 @@ class CalculateLogic extends GetxController {
   final CalculateState state = CalculateState();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   get formKey => _formKey;
-  var showResult = false.obs;
 
-  getresult() {
-    double d = double.tryParse(state.d.text) ?? 0.0;
-    double l = double.tryParse(state.l.text) ?? 0.0;
-    double w = double.tryParse(state.w.text) ?? 0.0;
 
+
+  Future<void> getresult() async {
+    if (!formKey.currentState!.validate()) {
+      return;
+    }
+    state.isLoading.value = true;
+    await Future.delayed(const Duration(seconds: 1));
+    double d = double.tryParse(state.d!.text) ?? 0.0;
+    double l = double.tryParse(state.l!.text) ?? 0.0;
+    double w = double.tryParse(state.w!.text) ?? 0.0;
+    state.isLoading.value = false;
+    state.showResult.value = true;
     // Calculate the result
     double result = d * l * w;
-
     // Set the result in the rController
-    state.r.text = result.toString();
+    state.r!.text = result.toString();
   }
 }
