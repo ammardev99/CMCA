@@ -9,10 +9,10 @@ class RoofEstimateState {
   RxBool isLoading = false.obs;
   RxBool showResult = false.obs;
   stateClear() {
-    typeOfMaterial!.clear();
-    length!.clear();
-    width!.clear();
-    result!.clear();
+    typeOfMaterial?.clear();
+    length?.clear();
+    width?.clear();
+    result?.clear();
     isLoading.value = false;
     showResult.value = false;
   }

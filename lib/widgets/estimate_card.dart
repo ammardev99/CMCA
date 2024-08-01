@@ -1,7 +1,5 @@
 import 'package:cmca/models/estimate_model.dart';
-import 'package:cmca/modules/calculate/view.dart';
 import 'package:cmca/widgets/formatting.dart';
-import 'package:cmca/widgets/show_status.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -9,11 +7,9 @@ import 'package:get/get.dart';
 Widget estimateOptionCard(Estimate objOption) {
   return InkWell(
     onTap: () {
-      if (objOption.id == 0) {
-        Get.to(CalculatePage());
-      } else {
-        showMsgToast("not available");
-      }
+      Get.toNamed(
+        objOption.route,
+      );
     },
     splashColor: objOption.color.withOpacity(0.3),
     borderRadius: BorderRadius.circular(15),

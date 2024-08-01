@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 
 class DesignEstimateState {
   TextEditingController? typeBuilding;
-  TextEditingController? designType;
   TextEditingController? totalArea;
+  TextEditingController? designType;
   TextEditingController? coverArea;
   TextEditingController? result;
 

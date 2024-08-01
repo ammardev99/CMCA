@@ -11,11 +11,11 @@ class ElectricalEstimateState {
   RxBool isLoading = false.obs;
   RxBool showResult = false.obs;
   stateClear() {
-    buildingType!.clear();
-    noRooms!.clear();
-    noWashrooms!.clear();
-    noKitchens!.clear();
-    result!.clear();
+    buildingType?.clear();
+    noRooms?.clear();
+    noWashrooms?.clear();
+    noKitchens?.clear();
+    result?.clear();
     isLoading.value = false;
     showResult.value = false;
   }

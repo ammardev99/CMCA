@@ -8,9 +8,9 @@ class FurnitureEstimateState {
   RxBool isLoading = false.obs;
   RxBool showResult = false.obs;
   stateClear() {
-    typeBuilding!.clear();
-    noRoom!.clear();
-    result!.clear();
+    typeBuilding?.clear();
+    noRoom?.clear();
+    result?.clear();
     isLoading.value = false;
     showResult.value = false;
   }

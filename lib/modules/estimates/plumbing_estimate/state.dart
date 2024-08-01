@@ -9,10 +9,10 @@ class PlumbingEstimateState {
   RxBool isLoading = false.obs;
   RxBool showResult = false.obs;
   stateClear() {
-    typeBuilding!.clear();
-    noWashroom!.clear();
-    noKitchen!.clear();
-    result!.clear();
+    typeBuilding?.clear();
+    noWashroom?.clear();
+    noKitchen?.clear();
+    result?.clear();
 
 
     isLoading.value = false;

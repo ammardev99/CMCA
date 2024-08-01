@@ -10,11 +10,11 @@ class FoundationEstimateState {
   RxBool isLoading = false.obs;
   RxBool showResult = false.obs;
   stateClear() {
-    type!.clear();
-    typeOfMaterial!.clear();
-    wallLength!.clear();
-    wallThickness!.clear();
-    result!.clear();
+    type?.clear();
+    typeOfMaterial?.clear();
+    wallLength?.clear();
+    wallThickness?.clear();
+    result?.clear();
     isLoading.value = false;
     showResult.value = false;
   }

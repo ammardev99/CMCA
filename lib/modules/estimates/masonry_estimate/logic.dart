@@ -8,8 +8,6 @@ class MasonryEstimateLogic extends GetxController {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   get formKey => _formKey;
 
-
-
   Future<void> getresult() async {
     if (!formKey.currentState!.validate()) {
       return;
@@ -26,4 +24,5 @@ class MasonryEstimateLogic extends GetxController {
     double result = d * l * w;
     // Set the result in the rController
     state.result!.text = result.toString();
-  }}
+  }
+}

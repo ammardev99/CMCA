@@ -10,10 +10,10 @@ class FinishingEstimateState {
   RxBool isLoading = false.obs;
   RxBool showResult = false.obs;
   stateClear() {
-    typeOfMaterial!.clear();
-    wallLength!.clear();
-    wallHeight!.clear();
-    result!.clear();
+    typeOfMaterial?.clear();
+    wallLength?.clear();
+    wallHeight?.clear();
+    result?.clear();
     isLoading.value = false;
     showResult.value = false;
   }

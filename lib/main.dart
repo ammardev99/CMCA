@@ -1,5 +1,6 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:cmca/modules/cmca.dart';
+import 'package:cmca/routes/routes.dart';
 import 'package:cmca/utils/color.dart';
 import 'package:cmca/widgets/formatting.dart';
 import 'package:flutter/material.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary),
         useMaterial3: true,
       ),
+      getPages: AppRoutes.appRoutes(),
       home: AnimatedSplashScreen(
           duration: 2000,
           splashTransition: SplashTransition.fadeTransition,
