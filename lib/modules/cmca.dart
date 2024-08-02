@@ -30,7 +30,7 @@ class _CMCAState extends State<CMCA> {
                     .white, // Set the color you want for the drawer icon
               ),
               title:
-                  appHeading("Civil Material Cost Analysis", AppColors.white),
+                  headingText("Civil Material Cost Analysis", AppColors.white),
               centerTitle: true,
             ),
             body: RefreshIndicator(
@@ -39,18 +39,24 @@ class _CMCAState extends State<CMCA> {
                   scrollDirection: Axis.vertical,
                   physics: const BouncingScrollPhysics(),
                   padding: const EdgeInsets.all(15),
-                  child: GridView.builder(
-                    itemCount: estimateOption.length,
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    gridDelegate:
-                        const SliverGridDelegateWithMaxCrossAxisExtent(
-                      maxCrossAxisExtent: 250,
-                      crossAxisSpacing: 10,
-                      mainAxisSpacing: 10,
-                    ),
-                    itemBuilder: (context, index) =>
-                        estimateOptionCard(estimateOption[index]),
+                  child: Column(
+                    children: [
+                      GridView.builder(
+                        itemCount: estimateOption.length,
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        gridDelegate:
+                            const SliverGridDelegateWithMaxCrossAxisExtent(
+                          maxCrossAxisExtent: 250,
+                          crossAxisSpacing: 10,
+                          mainAxisSpacing: 10,
+                        ),
+                        itemBuilder: (context, index) =>
+                            estimateOptionCard(estimateOption[index]),
+                      ),
+                      sizeBox(40),
+                      infoText("App is under development.")
+                    ],
                   ),
                 ))));
   }

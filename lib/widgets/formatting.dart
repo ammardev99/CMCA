@@ -11,8 +11,19 @@ Widget sizeBox(double w, [double? h]) {
   );
 }
 
+Widget titleText(String text, [Color? color]) {
+  return Text(
+    text,
+    style: TextStyle(
+      fontSize: 24,
+      fontWeight: FontWeight.bold,
+      color: color ?? AppColors.black,
+    ),
+    textAlign: TextAlign.center,
+  );
+}
 
-Widget appHeading(String text, [Color? color]) {
+Widget headingText(String text, [Color? color]) {
   return Text(
     text,
     style: TextStyle(
@@ -23,7 +34,7 @@ Widget appHeading(String text, [Color? color]) {
   );
 }
 
-Widget appInfoText(String text, [Color? color]) {
+Widget infoText(String text, [Color? color]) {
   return Text(
     text,
     style: TextStyle(

@@ -14,7 +14,7 @@ Widget menuOptionPage(IconData icon, String txt, [page]) {
       splashColor: AppColors.primary.withOpacity(0.3),
       leading: Icon(icon),
       iconColor: AppColors.primary,
-      title: appHeading(txt, AppColors.primary),
+      title: headingText(txt, AppColors.primary),
       onTap: () {
         if (page == null) {
           toastShowText('Not Available');

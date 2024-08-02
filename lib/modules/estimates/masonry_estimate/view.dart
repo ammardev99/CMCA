@@ -1,3 +1,4 @@
+import 'package:cmca/widgets/show_result.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:cmca/utils/validator.dart';
@@ -70,7 +71,13 @@ class MasonryEstimatePage extends StatelessWidget {
                         sizeBox(15),
                         Obx(() {
                           if (state.showResult.value == true) {
-                            return appHeading('Result');
+                            return Column(
+                              children: [
+                                titleText('Estimated Result'),
+                              DetailsTable(),
+                              sizeBox(100)
+                              ],
+                            );
                           } else {
                             return const Text('');
                           }

@@ -32,7 +32,7 @@ class EstimateActionButtons extends StatelessWidget {
                 ? const CircularProgressIndicator(
                     color: Colors.white,
                   )
-                : appHeading("Calculate", Colors.white),
+                : headingText("Calculate", Colors.white),
           ),
         ),
         const SizedBox(width: 10),
@@ -43,7 +43,7 @@ class EstimateActionButtons extends StatelessWidget {
             style: OutlinedButton.styleFrom(
               side: BorderSide(color: AppColors.black.withOpacity(0.4)),
             ),
-            child: appHeading('Clear', AppColors.black.withOpacity(0.4)),
+            child: headingText('Clear', AppColors.black.withOpacity(0.4)),
           ),
         ),
       ],

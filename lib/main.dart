@@ -1,5 +1,5 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
-import 'package:cmca/modules/cmca.dart';
+import 'package:cmca/modules/auth/login/view.dart';
 import 'package:cmca/routes/routes.dart';
 import 'package:cmca/utils/color.dart';
 import 'package:cmca/widgets/formatting.dart';
@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
               )
             ],
           ),
-          nextScreen: const CMCA()),
+          nextScreen: LoginPage()),
     );
   }
 }

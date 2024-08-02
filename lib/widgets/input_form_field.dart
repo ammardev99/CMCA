@@ -22,7 +22,7 @@ class InputFormFieldApp extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        appHeading(label),
+        headingText(label),
         sizeBox(5),
         TextFormField(
           controller: controller,

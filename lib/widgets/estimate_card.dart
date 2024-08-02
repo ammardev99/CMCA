@@ -29,7 +29,7 @@ Widget estimateOptionCard(Estimate objOption) {
             height: 80,
             child: Image.asset(objOption.icon),
           ),
-          appHeading(objOption.title)
+          headingText(objOption.title)
         ],
       ),
     ),

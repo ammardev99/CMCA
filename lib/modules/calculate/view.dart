@@ -61,7 +61,7 @@ class CalculatePage extends StatelessWidget {
                         sizeBox(15),
                         Obx(() {
                           if (state.showResult.value == true) {
-                            return appHeading('Result');
+                            return headingText('Result');
                           } else {
                             return const Text('');
                           }

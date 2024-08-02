@@ -1,3 +1,4 @@
+import 'package:cmca/widgets/show_result.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:cmca/utils/validator.dart';
@@ -28,14 +29,14 @@ class RoofEstimatePage extends StatelessWidget {
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        InputFormFieldApp(
-                          label: "Enter typeOfMaterial",
-                          hint: '00.0',
-                          controller: state.typeOfMaterial!,
-                          inputType: TextInputType.number,
-                          validator: validateValue,
-                        ),
-                        sizeBox(15),
+                        // InputFormFieldApp(
+                        //   label: "Enter typeOfMaterial",
+                        //   hint: '00.0',
+                        //   controller: state.typeOfMaterial!,
+                        //   inputType: TextInputType.number,
+                        //   validator: validateValue,
+                        // ),
+                        // sizeBox(15),
                         InputFormFieldApp(
                           label: "Enter length",
                           hint: '00.0',
@@ -51,6 +52,14 @@ class RoofEstimatePage extends StatelessWidget {
                           inputType: TextInputType.number,
                           validator: validateValue,
                         ),
+                        sizeBox(15),
+                        InputFormFieldApp(
+                          label: "Enter Thicknees",
+                          hint: '00.0',
+                          controller: state.typeOfMaterial!,
+                          inputType: TextInputType.number,
+                          validator: validateValue,
+                        ),
                         sizeBox(30),
                         Obx(() {
                           return EstimateActionButtons(
@@ -59,10 +68,16 @@ class RoofEstimatePage extends StatelessWidget {
                               stateClear: state.stateClear);
                         }),
                         sizeBox(30),
-                        sizeBox(15),
                         Obx(() {
                           if (state.showResult.value == true) {
-                            return appHeading('Result');
+                            return Column(
+                              children: [
+                                titleText('Estimated Result'),
+                              DetailsTable(),
+                              sizeBox(100)
+                              ],
+                            );
+
                           } else {
                             return const Text('');
                           }
@@ -71,4 +86,3 @@ class RoofEstimatePage extends StatelessWidget {
                 ))));
   }
 }
-

@@ -8,7 +8,7 @@ AppBar customAppbar(String label) {
       color: AppColors.white,
     ),
     backgroundColor: AppColors.primary,
-    title: appHeading(label, AppColors.white),
+    title: headingText(label, AppColors.white),
     centerTitle: true,
   );
 }
