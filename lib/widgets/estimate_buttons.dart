@@ -25,7 +25,8 @@ class EstimateActionButtons extends StatelessWidget {
           child: ElevatedButton(
             style: ButtonStyle(
               backgroundColor: WidgetStateProperty.all(AppColors.secondary),
-              minimumSize: WidgetStateProperty.all(const Size(double.infinity, 50)),
+              minimumSize:
+                  WidgetStateProperty.all(const Size(double.infinity, 50)),
             ),
             onPressed: getResult,
             child: isLoading

@@ -1,3 +1,5 @@
+import 'package:cmca/models/list_data.dart';
+import 'package:cmca/widgets/dropdown.dart';
 import 'package:cmca/widgets/show_result.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -29,37 +31,32 @@ class DesignEstimatePage extends StatelessWidget {
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
+                        InputDropdownFieldApp(
+                            label: "Building Class",
+                            hint: "Luxury, Medium, Economical",
+                            controller: state.typeBuilding!,
+                            options: buildingClass,
+                            validator: validateValue),
+                        sizeBox(15),
                         InputFormFieldApp(
-                          label: "Enter typeBuilding",
-                          hint: '00.0',
-                          controller: state.typeBuilding!,
+                          label: "Area Length",
+                          hint: 'Enter area length 00.0 ft',
+                          controller: state.areaLength!,
                           inputType: TextInputType.number,
                           validator: validateValue,
                         ),
                         sizeBox(15),
                         InputFormFieldApp(
-                          label: "Enter designType",
-                          hint: '00.0',
-                          controller: state.designType!,
+                          label: "Area Width",
+                          hint: 'Enter area width 00.0 ft',
+                          controller: state.areaWidth!,
                           inputType: TextInputType.number,
                           validator: validateValue,
                         ),
                         sizeBox(15),
-                        InputFormFieldApp(
-                          label: "Enter totalArea",
-                          hint: '00.0',
-                          controller: state.totalArea!,
-                          inputType: TextInputType.number,
-                          validator: validateValue,
-                        ),
-                        sizeBox(15),
-                        InputFormFieldApp(
-                          label: "Enter coverArea",
-                          hint: '00.0',
-                          controller: state.coverArea!,
-                          inputType: TextInputType.number,
-                          validator: validateValue,
-                        ),
+                        //   label: "Enter designType",
+                        //   label: "Enter totalArea",
+                        //   label: "Enter coverArea",
                         sizeBox(30),
                         Obx(() {
                           return EstimateActionButtons(
@@ -74,7 +71,8 @@ class DesignEstimatePage extends StatelessWidget {
                             return Column(
                               children: [
                                 titleText('Estimated Result'),
-                                DetailsTable(),
+                                // DetailsTable(),
+                                ResultTable(quantity: logic.getSqFt().toString() , cost: logic.getCost().toString(), quality: "quality", manPower: "manPower", duration: "duration", lifeSpan: 'lifeSpan', samplesImages: 'samplesImages', standardProcedure: 'standardProcedure', serviceProvidersContact: 'serviceProvidersContact'),
                                 sizeBox(100)
                               ],
                             );
@@ -86,3 +84,10 @@ class DesignEstimatePage extends StatelessWidget {
                 ))));
   }
 }
+
+
+
+
+
+
+

@@ -29,6 +29,13 @@ class ElectricalEstimatePage extends StatelessWidget {
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
+
+                        infoText("length"),
+                        infoText("width"),
+                        // find area
+                        // a*100 cost
+
+
                         InputFormFieldApp(
                           label: "Enter buildingType",
                           hint: '00.0',

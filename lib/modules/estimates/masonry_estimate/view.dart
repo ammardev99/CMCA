@@ -29,6 +29,14 @@ class MasonryEstimatePage extends StatelessWidget {
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
+                        infoText("L"),
+                        infoText("W"),
+                        infoText("H"),
+                        //v * 400
+
+
+
+
                         InputFormFieldApp(
                           label: "Enter typeOfMaterial",
                           hint: '00.0',

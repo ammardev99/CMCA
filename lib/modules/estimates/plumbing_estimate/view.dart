@@ -29,6 +29,10 @@ class PlumbingEstimatePage extends StatelessWidget {
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
+                        infoText("no washroom"), // 25
+                        infoText("no kitchines"), // 10
+                        //
+
                         InputFormFieldApp(
                           label: "Enter length",
                           hint: '00.0',

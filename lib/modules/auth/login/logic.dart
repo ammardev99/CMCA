@@ -17,7 +17,7 @@ class LoginLogic extends GetxController {
     state.isLoading.value = true;
     await Future.delayed(const Duration(seconds: 5));
     if (state.userEmail.text == 'cmca@gmail.com' &&
-        state.userPassword.text == 'Saqib&Ammar@GR6WORCERRI3I1') {
+        state.userPassword.text == 'Admin@Saqib1') {
       Get.offAll(const CMCA());
     } else {
       toastShowText("email /password not match.");

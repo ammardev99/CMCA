@@ -3,9 +3,9 @@ import 'package:get/get.dart';
 
 class DesignEstimateState {
   TextEditingController? typeBuilding;
-  TextEditingController? totalArea;
-  TextEditingController? designType;
-  TextEditingController? coverArea;
+  TextEditingController? areaLength;
+  TextEditingController? areaWidth;
+  TextEditingController? areaSqFt;
   TextEditingController? result;
 
   // buildingType;
@@ -15,9 +15,9 @@ class DesignEstimateState {
   RxBool showResult = false.obs;
   stateClear() {
     typeBuilding?.clear();
-    totalArea?.clear();
-    coverArea?.clear();
-    designType?.clear();
+    areaLength?.clear();
+    areaWidth?.clear();
+    areaSqFt?.clear();
     result?.clear();
     isLoading.value = false;
     showResult.value = false;
@@ -26,8 +26,8 @@ class DesignEstimateState {
   DesignEstimateState() {
     ///Initialize variables
     typeBuilding = TextEditingController();
-    totalArea = TextEditingController();
-    coverArea = TextEditingController();
-    designType = TextEditingController();
+    areaLength = TextEditingController();
+    areaWidth = TextEditingController();
+    areaSqFt = TextEditingController();
   }
 }

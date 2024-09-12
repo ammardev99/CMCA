@@ -29,6 +29,22 @@ class FinishingEstimatePage extends StatelessWidget {
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
+                        infoText("Type"),
+                          // Palster,   stone work,   paint,  distamper
+                          infoText("L"),
+                          infoText("H"),
+                          infoText("T"),
+                          // 250,   350,   15,  15
+                        infoText(""),
+                        infoText(""),
+                        infoText(""),
+                        infoText(""),
+                        // find valume
+                        // v*350 cost
+
+
+
+
                         InputFormFieldApp(
                           label: "Enter typeOfMaterial",
                           hint: '00.0',

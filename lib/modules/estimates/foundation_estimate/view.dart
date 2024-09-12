@@ -29,6 +29,15 @@ class FoundationEstimatePage extends StatelessWidget {
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
+
+                        infoText("Length"),
+                        infoText("Width"),
+                        infoText("Depth"),
+                        // find valume
+                        // v*350 cost 
+
+
+
                         InputFormFieldApp(
                           label: "Enter type",
                           hint: '00.0',

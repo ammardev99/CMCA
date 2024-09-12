@@ -29,6 +29,16 @@ class FurnitureEstimatePage extends StatelessWidget {
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
+
+
+
+                        infoText("No Sofa"), // 55k
+                        infoText("No D-Bed: "),// 50
+                        infoText("No S-Bed: "),// 30
+                        infoText("No Dining Table seasts "),// 4/35 6/50
+                        infoText("No Chairs"), // 7000
+                        infoText("No Desk"), // 20000
+                        infoText("No Door"), // 18000
                         InputFormFieldApp(
                           label: "Enter typeBuilding",
                           hint: '00.0',
