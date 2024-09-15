@@ -46,10 +46,8 @@ class MyApp extends StatelessWidget {
                 height: 150,
               ),
               const Spacer(),
-              const Text(
-                'Powered By \n Malik Saqib Faraz & Ammar Shafiq',
-                textAlign: TextAlign.center,
-              )
+              infoText("Powered By", Colors.grey.shade500),
+              infoText('Malik Saqib Faraz & Ammar Shafiq', Colors.grey.shade500)
             ],
           ),
           nextScreen: LoginPage()),

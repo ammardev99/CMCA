@@ -1,10 +1,10 @@
-import 'package:cmca/models/estimate_model.dart';
+import 'package:cmca/utils/lists/estimate_options.dart';
 import 'package:cmca/widgets/formatting.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // GridCard
-Widget estimateOptionCard(Estimate objOption) {
+Widget estimateOptionCard(ModuleOption objOption) {
   return InkWell(
     onTap: () {
       Get.toNamed(
@@ -35,5 +35,3 @@ Widget estimateOptionCard(Estimate objOption) {
     ),
   );
 }
-
-// List card

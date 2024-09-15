@@ -1,0 +1,21 @@
+1: Info Data
+I need details for all of these modules
+> Icon:	you can finde animation here https://lottiefiles.com/search?q=construction+&category=animations
+> Title	Module name here
+> Heading	sub heading
+> Description	Module details here
+
+1.1 Design Estimate
+1.2 Foundation Estimate
+1.3 Masonry Estimate
+1.4 Roof Estimate
+1.5 Electrical Estimate
+1.6 Plumbing Estimate
+1.7 Finishing Estimate
+1.8 Furniture Estimate
+//Steel Estimate
+//Mechanical Estimate
+
+link required 
+> Contact us /WhatsApp 
+> Follow us/Facebook page 

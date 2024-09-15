@@ -1,4 +1,4 @@
-import 'package:cmca/models/estimate_model.dart';
+import 'package:cmca/utils/lists/estimate_options.dart';
 import 'package:cmca/utils/color.dart';
 import 'package:cmca/widgets/drawer.dart';
 import 'package:cmca/widgets/estimate_card.dart';
@@ -23,40 +23,35 @@ class _CMCAState extends State<CMCA> {
     return SafeArea(
         child: Scaffold(
             drawer: customDrawer(),
+// App bar
             appBar: AppBar(
               backgroundColor: AppColors.primary,
-              iconTheme: const IconThemeData(
-                color: AppColors
-                    .white, // Set the color you want for the drawer icon
+              leading: const DrawerButton(
+                color: Colors.white,
               ),
               title:
                   headingText("Civil Material Cost Analysis", AppColors.white),
               centerTitle: true,
             ),
+// body
             body: RefreshIndicator(
                 onRefresh: _refreshRates,
                 child: SingleChildScrollView(
                   scrollDirection: Axis.vertical,
                   physics: const BouncingScrollPhysics(),
                   padding: const EdgeInsets.all(15),
-                  child: Column(
-                    children: [
-                      GridView.builder(
-                        itemCount: estimateOption.length,
-                        shrinkWrap: true,
-                        physics: const NeverScrollableScrollPhysics(),
-                        gridDelegate:
-                            const SliverGridDelegateWithMaxCrossAxisExtent(
-                          maxCrossAxisExtent: 250,
-                          crossAxisSpacing: 10,
-                          mainAxisSpacing: 10,
-                        ),
-                        itemBuilder: (context, index) =>
-                            estimateOptionCard(estimateOption[index]),
-                      ),
-                      sizeBox(40),
-                      infoText("App is under development.")
-                    ],
+                  child: GridView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: estimateOption.length,
+                    shrinkWrap: true,
+                    gridDelegate:
+                        const SliverGridDelegateWithMaxCrossAxisExtent(
+                      maxCrossAxisExtent: 250,
+                      crossAxisSpacing: 10,
+                      mainAxisSpacing: 10,
+                    ),
+                    itemBuilder: (context, index) =>
+                        estimateOptionCard(estimateOption[index]),
                   ),
                 ))));
   }

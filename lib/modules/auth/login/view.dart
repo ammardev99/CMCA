@@ -1,7 +1,9 @@
+import 'package:cmca/modules/cmca.dart';
 import 'package:cmca/utils/color.dart';
 import 'package:cmca/utils/validator.dart';
 import 'package:cmca/widgets/formatting.dart';
 import 'package:cmca/widgets/input_form_field.dart';
+import 'package:cmca/widgets/loading_circle.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -62,12 +64,11 @@ class LoginPage extends StatelessWidget {
                           const Size(double.infinity, 50)),
                     ),
                     onPressed: () async {
-                      await logic.login();
-                    },
+                      // await logic.login();
+                      Get.offAll(const CMCA());
+                      },
                     child: state.isLoading.value
-                        ? const CircularProgressIndicator(
-                            color: Colors.white,
-                          )
+                        ?  myLodaing()
                         : headingText("Login", Colors.white),
                   );
                 }),

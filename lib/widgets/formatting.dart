@@ -26,7 +26,9 @@ Widget titleText(String text, [Color? color]) {
 Widget headingText(String text, [Color? color]) {
   return Text(
     text,
+
     style: TextStyle(
+      fontFamily: "Lato",
       fontSize: 16,
       fontWeight: FontWeight.bold,
       color: color ?? AppColors.black,
@@ -40,7 +42,7 @@ Widget infoText(String text, [Color? color]) {
     style: TextStyle(
       fontSize: 12,
       fontWeight: FontWeight.w500,
-      color: color ?? Colors.black87,
+      color: color ?? Colors.grey,
     ),
     textAlign: TextAlign.justify,
   );

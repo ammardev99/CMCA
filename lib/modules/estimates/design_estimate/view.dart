@@ -8,7 +8,6 @@ import 'package:cmca/widgets/app_bar.dart';
 import 'package:cmca/widgets/estimate_buttons.dart';
 import 'package:cmca/widgets/formatting.dart';
 import 'package:cmca/widgets/input_form_field.dart';
-
 import 'logic.dart';
 
 class DesignEstimatePage extends StatelessWidget {
@@ -21,7 +20,7 @@ class DesignEstimatePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-            appBar: customAppbar("Design Estimate"),
+          appBar: customAppbar('Design Estimate'),
             body: SingleChildScrollView(
                 scrollDirection: Axis.vertical,
                 physics: const BouncingScrollPhysics(),
@@ -72,7 +71,17 @@ class DesignEstimatePage extends StatelessWidget {
                               children: [
                                 titleText('Estimated Result'),
                                 // DetailsTable(),
-                                ResultTable(quantity: logic.getSqFt().toString() , cost: logic.getCost().toString(), quality: "quality", manPower: "manPower", duration: "duration", lifeSpan: 'lifeSpan', samplesImages: 'samplesImages', standardProcedure: 'standardProcedure', serviceProvidersContact: 'serviceProvidersContact'),
+                                ResultTable(
+                                    quantity: logic.getSqFt().toString(),
+                                    cost: logic.getCost().toString(),
+                                    quality: "quality",
+                                    manPower: "manPower",
+                                    duration: "duration",
+                                    lifeSpan: 'lifeSpan',
+                                    samplesImages: 'samplesImages',
+                                    standardProcedure: 'standardProcedure',
+                                    serviceProvidersContact:
+                                        'serviceProvidersContact'),
                                 sizeBox(100)
                               ],
                             );
@@ -84,10 +93,3 @@ class DesignEstimatePage extends StatelessWidget {
                 ))));
   }
 }
-
-
-
-
-
-
-
