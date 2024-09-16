@@ -19,8 +19,9 @@ class FoundationEstimatePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-            appBar: customAppbar("Foundation Estimate"),
-            body: SingleChildScrollView(
+            // appBar: customAppbar("Foundation Estimate"),
+          appBar: customInfoApp("Foundation", context),
+          body: SingleChildScrollView(
                 scrollDirection: Axis.vertical,
                 physics: const BouncingScrollPhysics(),
                 padding: const EdgeInsets.all(20),

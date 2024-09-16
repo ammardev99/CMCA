@@ -20,7 +20,8 @@ class DesignEstimatePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-          appBar: customAppbar('Design Estimate'),
+          // appBar: customAppbar('Design Estimate'),
+          appBar: customInfoApp("Design", context),
             body: SingleChildScrollView(
                 scrollDirection: Axis.vertical,
                 physics: const BouncingScrollPhysics(),

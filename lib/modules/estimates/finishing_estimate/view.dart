@@ -19,7 +19,9 @@ class FinishingEstimatePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-            appBar: customAppbar("Finishing Estimate"),
+            // appBar: customAppbar("Finishing Estimate"),
+          appBar: customInfoApp("Finishing", context),
+
             body: SingleChildScrollView(
                 scrollDirection: Axis.vertical,
                 physics: const BouncingScrollPhysics(),

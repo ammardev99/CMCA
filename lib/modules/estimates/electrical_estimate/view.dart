@@ -19,7 +19,7 @@ class ElectricalEstimatePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-            appBar: customAppbar("Electrical Estimate"),
+            appBar: customInfoApp("Electrical", context),
             body: SingleChildScrollView(
                 scrollDirection: Axis.vertical,
                 physics: const BouncingScrollPhysics(),
@@ -29,12 +29,10 @@ class ElectricalEstimatePage extends StatelessWidget {
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-
                         infoText("length"),
                         infoText("width"),
                         // find area
                         // a*100 cost
-
 
                         InputFormFieldApp(
                           label: "Enter buildingType",
@@ -81,11 +79,10 @@ class ElectricalEstimatePage extends StatelessWidget {
                             return Column(
                               children: [
                                 titleText('Estimated Result'),
-                              DetailsTable(),
-                              sizeBox(100)
+                                DetailsTable(),
+                                sizeBox(100)
                               ],
                             );
-
                           } else {
                             return const Text('');
                           }

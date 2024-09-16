@@ -19,7 +19,9 @@ class RoofEstimatePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-            appBar: customAppbar("Roof Estimate"),
+            // appBar: customAppbar("Roof Estimate"),
+          appBar: customInfoApp("Roof", context),
+
             body: SingleChildScrollView(
                 scrollDirection: Axis.vertical,
                 physics: const BouncingScrollPhysics(),

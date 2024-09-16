@@ -21,7 +21,7 @@ class EstimateActionButtons extends StatelessWidget {
       children: [
         SizedBox(
           height: 45,
-          width: 220,
+          width: 180,
           child: ElevatedButton(
             style: ButtonStyle(
               backgroundColor: WidgetStateProperty.all(AppColors.secondary),
@@ -36,7 +36,6 @@ class EstimateActionButtons extends StatelessWidget {
                 : headingText("Calculate", Colors.white),
           ),
         ),
-        const SizedBox(width: 10),
         SizedBox(
           height: 45,
           child: OutlinedButton(

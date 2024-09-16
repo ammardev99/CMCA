@@ -19,7 +19,8 @@ class PlumbingEstimatePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-            appBar: customAppbar("Plumbing Estimate"),
+            // appBar: customAppbar("Plumbing Estimate"),
+          appBar: customInfoApp("Plumbing", context),
             body: SingleChildScrollView(
                 scrollDirection: Axis.vertical,
                 physics: const BouncingScrollPhysics(),
@@ -31,8 +32,6 @@ class PlumbingEstimatePage extends StatelessWidget {
                       children: [
                         infoText("no washroom"), // 25
                         infoText("no kitchines"), // 10
-                        //
-
                         InputFormFieldApp(
                           label: "Enter length",
                           hint: '00.0',

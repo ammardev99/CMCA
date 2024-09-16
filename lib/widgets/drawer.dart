@@ -21,10 +21,9 @@ Drawer customDrawer() {
         sizeBox(60),
         SizedBox(
           width: 180,
-          child: Lottie.asset('assets/animation.json',
+          child: Lottie.asset('assets/animations/drawer.json',
               fit: BoxFit.fill,
-              ),
-        ),
+              ),),
         const Divider(),
         infoText("version 1.0.3"),
         sizeBox(20),
