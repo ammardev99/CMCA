@@ -20,8 +20,7 @@ class DesignEstimatePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-          // appBar: customAppbar('Design Estimate'),
-          appBar: customInfoApp("Design", context),
+          appBar: customInfoAppBar("Design", context),
             body: SingleChildScrollView(
                 scrollDirection: Axis.vertical,
                 physics: const BouncingScrollPhysics(),
@@ -31,12 +30,23 @@ class DesignEstimatePage extends StatelessWidget {
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        InputDropdownFieldApp(
-                            label: "Building Class",
-                            hint: "Luxury, Medium, Economical",
-                            controller: state.typeBuilding!,
-                            options: buildingClass,
-                            validator: validateValue),
+                        //   label: "Enter designType",
+                        //   label: "Enter totalArea",
+                        //   label: "Enter coverArea",
+                        // InputDropdownFieldApp(
+                        //     label: "Building Class",
+                        //     hint: "Luxury, Medium, Economical",
+                        //     controller: state.typeBuilding!,
+                        //     options: buildingClass,
+                        //     validator: validateValue),
+InputDropDown(
+  label: "Design Type",
+  hint: "Select Design Type",
+  controller: state.typeBuilding!,
+  options: buildingClass,
+  validator: validateValue,
+  // onClear: ,
+  ),
                         sizeBox(15),
                         InputFormFieldApp(
                           label: "Area Length",
@@ -53,10 +63,6 @@ class DesignEstimatePage extends StatelessWidget {
                           inputType: TextInputType.number,
                           validator: validateValue,
                         ),
-                        sizeBox(15),
-                        //   label: "Enter designType",
-                        //   label: "Enter totalArea",
-                        //   label: "Enter coverArea",
                         sizeBox(30),
                         Obx(() {
                           return EstimateActionButtons(

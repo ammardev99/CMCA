@@ -22,7 +22,7 @@ class _CMCAState extends State<CMCA> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-            drawer: customDrawer(),
+            drawer: customDrawer(context),
 // App bar
             appBar: AppBar(
               backgroundColor: AppColors.primary,

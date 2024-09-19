@@ -20,7 +20,7 @@ class PlumbingEstimatePage extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
             // appBar: customAppbar("Plumbing Estimate"),
-          appBar: customInfoApp("Plumbing", context),
+          appBar: customInfoAppBar("Plumbing", context),
             body: SingleChildScrollView(
                 scrollDirection: Axis.vertical,
                 physics: const BouncingScrollPhysics(),

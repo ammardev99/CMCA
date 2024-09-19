@@ -20,7 +20,7 @@ class FurnitureEstimatePage extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
             // appBar: customAppbar("Furniture Estimate"),
-          appBar: customInfoApp("Furniture", context),
+          appBar: customInfoAppBar("Furniture", context),
             body: SingleChildScrollView(
                 scrollDirection: Axis.vertical,
                 physics: const BouncingScrollPhysics(),

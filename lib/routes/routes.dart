@@ -1,3 +1,5 @@
+import 'package:cmca/modules/about_us.dart';
+import 'package:cmca/modules/auth/login/view.dart';
 import 'package:cmca/modules/estimates/design_estimate/view.dart';
 import 'package:cmca/modules/estimates/electrical_estimate/view.dart';
 import 'package:cmca/modules/estimates/finishing_estimate/view.dart';
@@ -11,7 +13,8 @@ import 'package:get/get.dart';
 
 class AppRoutes {
   static appRoutes() => [
-        // GetPage(name: RouteName.aboutus, page: () => AboutUsPage()),
+        GetPage(name: RouteName.login, page: () => LoginPage()),
+        GetPage(name: RouteName.aboutUs, page: () => const AboutUs()),
         GetPage(name: EstimateForm.designEstimate, page: () => DesignEstimatePage()),
         GetPage(name: EstimateForm.foundationEstimate, page: () => FoundationEstimatePage()),
         GetPage(name: EstimateForm.masonryEstimate, page: () => MasonryEstimatePage()),

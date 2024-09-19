@@ -4,7 +4,19 @@ import 'package:cmca/widgets/formatting.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
-AppBar customInfoApp(String label, BuildContext context) {
+AppBar customAppBar(String label) {
+  return AppBar(
+    leading: const BackButton(
+      color: AppColors.white,
+    ),
+    backgroundColor: AppColors.primary,
+    title: headingText(label, AppColors.white),
+    centerTitle: true,
+  );
+}
+
+
+AppBar customInfoAppBar(String label, BuildContext context) {
   return AppBar(
     leading: const BackButton(
       color: AppColors.white,
@@ -20,6 +32,7 @@ AppBar customInfoApp(String label, BuildContext context) {
           builder: (BuildContext context) {
             return AlertDialog(
               // title:
+              backgroundColor: AppColors.white,
               content: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,

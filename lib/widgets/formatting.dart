@@ -15,6 +15,7 @@ Widget titleText(String text, [Color? color]) {
   return Text(
     text,
     style: TextStyle(
+      fontFamily: "Lato",
       fontSize: 24,
       fontWeight: FontWeight.bold,
       color: color ?? AppColors.black,

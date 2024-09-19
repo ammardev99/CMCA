@@ -19,7 +19,7 @@ class ElectricalEstimatePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-            appBar: customInfoApp("Electrical", context),
+            appBar: customInfoAppBar("Electrical", context),
             body: SingleChildScrollView(
                 scrollDirection: Axis.vertical,
                 physics: const BouncingScrollPhysics(),

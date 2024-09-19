@@ -20,7 +20,7 @@ class MasonryEstimatePage extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
             // appBar: customAppbar("Masonry Estimate"),
-          appBar: customInfoApp("Masonry", context),
+          appBar: customInfoAppBar("Masonry", context),
             body: SingleChildScrollView(
                 scrollDirection: Axis.vertical,
                 physics: const BouncingScrollPhysics(),

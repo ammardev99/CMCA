@@ -1,5 +1,6 @@
 class RouteName {
-  static const String screenName = '/screenPage';
+  static const String login = '/login';
+  static const String aboutUs = '/aboutUs';
 }
 
 class EstimateForm {

@@ -1,4 +1,3 @@
-import 'package:cmca/modules/cmca.dart';
 import 'package:cmca/utils/color.dart';
 import 'package:cmca/utils/validator.dart';
 import 'package:cmca/widgets/formatting.dart';
@@ -64,11 +63,11 @@ class LoginPage extends StatelessWidget {
                           const Size(double.infinity, 50)),
                     ),
                     onPressed: () async {
-                      // await logic.login();
-                      Get.offAll(const CMCA());
-                      },
+                      await logic.login();
+                      // Get.offAll(const CMCA());
+                    },
                     child: state.isLoading.value
-                        ?  myLodaing()
+                        ? myLodaing()
                         : headingText("Login", Colors.white),
                   );
                 }),
@@ -85,6 +84,7 @@ class LoginPage extends StatelessWidget {
                           context: context,
                           builder: (BuildContext context) {
                             return AlertDialog(
+                              backgroundColor: AppColors.white,
                               title: const Text(
                                 'Let\'s Go!',
                                 style: TextStyle(
