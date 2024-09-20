@@ -1,4 +1,3 @@
-import 'package:cmca/models/list_data.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,14 +17,14 @@ class DesignEstimateLogic extends GetxController {
         state.showResult.value = false;
 
     await Future.delayed(const Duration(seconds: 1));
-    double d = double.tryParse(state.typeBuilding!.text) ?? 0.0;
+    // double d = double.tryParse(state.typeBuilding!.text) ?? 0.0;
     // double d = double.tryParse(state.totalArea!.text) ?? 0.0;
     state.isLoading.value = false;
     state.showResult.value = true;
     // Calculate the result
-    double result = d ;
+    // double result = d ;
     // Set the result in the rController
-    state.result!.text = result.toString();
+    // state.result!.text = result.toString();
   }
 
 
@@ -36,7 +35,7 @@ class DesignEstimateLogic extends GetxController {
     return length * width;
   }
 
-    double getCost() {
-    return getSqFt()*getDesignCost(state.typeBuilding!.text);
-  }
+    // double getCost() {
+    // return getSqFt()*getDesignCost(state.typeBuilding!.text);
+  // }
 }

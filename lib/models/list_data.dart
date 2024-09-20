@@ -1,21 +1,22 @@
-List<String> buildingClass = [
-  "Luxury",
-  "High-end",
-  "Medium",
+List<String> designTypes = [
+  "Select Design Type",
   "Economical",
+  "Medium",
+  "High-end",
+  "Luxury",
 ];
 
 double getDesignCost(String buildtype) {
   switch (buildtype) {
     case 'Luxury':
-      return 350.0;
+      return 350;
     case 'High-end':
-      return 200.0;
+      return 200;
     case 'Medium':
-      return 130.0;
+      return 130;
     case 'Economical':
-      return 70.0;
+      return 70;
     default:
-      return 1.0;
+      return 1;
   }
 }

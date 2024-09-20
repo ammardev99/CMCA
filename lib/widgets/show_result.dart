@@ -90,3 +90,69 @@ class ResultTable extends StatelessWidget {
     );
   }
 }
+
+
+class ResultTable1 extends StatelessWidget {
+  final String? quantity;
+  final String? cost;
+  final String? quality;
+  final String? manPower;
+  final String? duration;
+  final String? lifeSpan;
+  final String? samplesImages;
+  final String? standardProcedure;
+  final String? serviceProvidersContact;
+
+  const ResultTable1({
+    super.key,
+    this.quantity,
+    this.cost,
+    this.quality,
+    this.manPower,
+    this.duration,
+    this.lifeSpan,
+    this.samplesImages,
+    this.standardProcedure,
+    this.serviceProvidersContact,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final List<Map<String, String?>> details = [
+      {'label': 'Quantity', 'value': quantity ?? ''},
+      {'label': 'Cost', 'value': cost ?? ''},
+      {'label': 'Quality', 'value': quality ?? ''},
+      {'label': 'Man Power', 'value': manPower ?? ''},
+      {'label': 'Duration', 'value': duration ?? ''},
+      {'label': 'Life span', 'value': lifeSpan ?? ''},
+      {'label': 'Samples Images', 'value': samplesImages ?? ''},
+      {'label': 'Standard Procedure', 'value': standardProcedure ?? ''},
+      {'label': 'Service providers contact', 'value': serviceProvidersContact ?? ''},
+    ];
+
+    return SingleChildScrollView(
+      child: DataTable(
+        columns: const [
+          DataColumn(
+            label: Text(
+              'Details',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+          ),
+          DataColumn(
+            label: Text(
+              'Values',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+          ),
+        ],
+        rows: details
+            .map((detail) => DataRow(cells: [
+                  DataCell(Text(detail['label'] ?? '')),
+                  DataCell(Text(detail['value'] ?? '')),
+                ]))
+            .toList(),
+      ),
+    );
+  }
+}

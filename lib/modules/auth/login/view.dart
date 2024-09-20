@@ -1,3 +1,4 @@
+import 'package:cmca/modules/estimates/cmca.dart';
 import 'package:cmca/utils/color.dart';
 import 'package:cmca/utils/validator.dart';
 import 'package:cmca/widgets/formatting.dart';
@@ -63,8 +64,8 @@ class LoginPage extends StatelessWidget {
                           const Size(double.infinity, 50)),
                     ),
                     onPressed: () async {
-                      await logic.login();
-                      // Get.offAll(const CMCA());
+                      // await logic.login();
+                      Get.offAll(const CMCA());
                     },
                     child: state.isLoading.value
                         ? myLodaing()

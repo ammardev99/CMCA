@@ -1,6 +1,6 @@
 import 'package:cmca/models/list_data.dart';
+import 'package:cmca/utils/color.dart';
 import 'package:cmca/widgets/dropdown.dart';
-import 'package:cmca/widgets/show_result.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:cmca/utils/validator.dart';
@@ -20,83 +20,115 @@ class DesignEstimatePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-          appBar: customInfoAppBar("Design", context),
-            body: SingleChildScrollView(
-                scrollDirection: Axis.vertical,
-                physics: const BouncingScrollPhysics(),
-                padding: const EdgeInsets.all(20),
-                child: Form(
-                  key: logic.formKey,
-                  child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
+      appBar: customInfoAppBar("Design", context),
+      body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          physics: const BouncingScrollPhysics(),
+          padding: const EdgeInsets.all(20),
+          child: Form(
+            key: logic.formKey,
+            child:
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              //   label: "Enter designType",
+              //   label: "Enter totalArea",
+              headingText('Design Class'),
+              sizeBox(5),
+              Obx(
+                () => CustomDropdown(
+                  selectedValue: state.typeBuilding.value,
+                  options: designTypes,
+                  onChanged: (value) {
+                    state.typeBuilding.value = value;
+                  },
+                  validText: "Select Design Type",
+                ),
+              ),
+              sizeBox(15),
+              InputFormFieldApp(
+                label: "Area Length",
+                hint: 'Enter area length 00.0 ft',
+                controller: state.areaLength!,
+                inputType: TextInputType.number,
+                validator: validateValue,
+              ),
+              sizeBox(15),
+              InputFormFieldApp(
+                label: "Area Width",
+                hint: 'Enter area width 00.0 ft',
+                controller: state.areaWidth!,
+                inputType: TextInputType.number,
+                validator: validateValue,
+              ),
+              sizeBox(30),
+              Obx(() {
+                return EstimateActionButtons(
+                    isLoading: state.isLoading.value,
+                    getResult: logic.getresult,
+                    stateClear: state.stateClear);
+              }),
+              sizeBox(30),
+              Obx(() {
+                if (state.showResult.value) {
+                  return Container(
+                    padding: const EdgeInsets.all(15),
+                    decoration: BoxDecoration(
+                      color: AppColors.grey,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Column(
                       children: [
-                        //   label: "Enter designType",
-                        //   label: "Enter totalArea",
-                        //   label: "Enter coverArea",
-                        // InputDropdownFieldApp(
-                        //     label: "Building Class",
-                        //     hint: "Luxury, Medium, Economical",
-                        //     controller: state.typeBuilding!,
-                        //     options: buildingClass,
-                        //     validator: validateValue),
-InputDropDown(
-  label: "Design Type",
-  hint: "Select Design Type",
-  controller: state.typeBuilding!,
-  options: buildingClass,
-  validator: validateValue,
-  // onClear: ,
-  ),
-                        sizeBox(15),
-                        InputFormFieldApp(
-                          label: "Area Length",
-                          hint: 'Enter area length 00.0 ft',
-                          controller: state.areaLength!,
-                          inputType: TextInputType.number,
-                          validator: validateValue,
+                        titleText('Design Estinate'),
+                        const Divider(
+                          color: AppColors.primary,
                         ),
-                        sizeBox(15),
-                        InputFormFieldApp(
-                          label: "Area Width",
-                          hint: 'Enter area width 00.0 ft',
-                          controller: state.areaWidth!,
-                          inputType: TextInputType.number,
-                          validator: validateValue,
+                        sizeBox(5),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            infoText("Design Type", AppColors.primary),
+                            infoText(state.typeBuilding.value.toString()),
+                          ],
                         ),
-                        sizeBox(30),
-                        Obx(() {
-                          return EstimateActionButtons(
-                              isLoading: state.isLoading.value,
-                              getResult: logic.getresult,
-                              stateClear: state.stateClear);
-                        }),
-                        sizeBox(30),
-                        sizeBox(15),
-                        Obx(() {
-                          if (state.showResult.value == true) {
-                            return Column(
-                              children: [
-                                titleText('Estimated Result'),
-                                // DetailsTable(),
-                                ResultTable(
-                                    quantity: logic.getSqFt().toString(),
-                                    cost: logic.getCost().toString(),
-                                    quality: "quality",
-                                    manPower: "manPower",
-                                    duration: "duration",
-                                    lifeSpan: 'lifeSpan',
-                                    samplesImages: 'samplesImages',
-                                    standardProcedure: 'standardProcedure',
-                                    serviceProvidersContact:
-                                        'serviceProvidersContact'),
-                                sizeBox(100)
-                              ],
-                            );
-                          } else {
-                            return const Text('');
-                          }
-                        }),
-                      ]),
-                ))));
+                        sizeBox(5),
+                        const Divider(),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            infoText("Area", AppColors.primary),
+                            infoText(logic.getSqFt().toString()),
+                          ],
+                        ),
+                        sizeBox(5),
+                        const Divider(),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            infoText("Duration", AppColors.primary),
+                            infoText('2 Days'),
+                          ],
+                        ),
+                        sizeBox(5),
+                        const Divider(),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            infoText("Design Cost", AppColors.primary),
+                            infoText('00', AppColors.primary),
+                          ],
+                        ),
+                        sizeBox(5),
+                        const Divider(),
+                      ],
+                    ),
+                  );
+                } else {
+                  return const Text('');
+                }
+              }),
+
+              sizeBox(15),
+            ]),
+          )),
+    ));
   }
 }

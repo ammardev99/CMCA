@@ -1,5 +1,6 @@
 import 'package:cmca/utils/color.dart';
 import 'package:cmca/widgets/formatting.dart';
+import 'package:cmca/widgets/loading_circle.dart';
 import 'package:flutter/material.dart';
 
 class EstimateActionButtons extends StatelessWidget {
@@ -30,9 +31,7 @@ class EstimateActionButtons extends StatelessWidget {
             ),
             onPressed: getResult,
             child: isLoading
-                ? const CircularProgressIndicator(
-                    color: Colors.white,
-                  )
+                ? myLodaing(20)
                 : headingText("Calculate", Colors.white),
           ),
         ),

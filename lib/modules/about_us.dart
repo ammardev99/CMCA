@@ -32,6 +32,8 @@ class AboutUs extends StatelessWidget {
           headingText("Our Team"),
           infoText("▪ Malik Saqib Faraz - CEO & Civil Engineer"),
           infoText("▪ Ammar Shafiq - Founder & Developer"),
+          infoText("▪ Muhammad Abdullah - Civil Engineer"),
+          infoText("▪ Talha Saleem - Civil Engineer"),
           sizeBox(10),
           headingText("Why Choose CMCA?"),
           infoText("Our app offers precise cost and material estimates for each stage of your project."),

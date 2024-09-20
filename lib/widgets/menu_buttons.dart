@@ -22,29 +22,20 @@ Widget menuOptionPage(IconData icon, String txt, [String? page]) {
   );
 }
 
-Widget menuLinkOption(IconData icon, String txt,String link, BuildContext context) {
+Widget menuLinkOption(IconData icon, String txt, String link, BuildContext context) {
   return ListTile(
     hoverColor: AppColors.primary.withOpacity(0.3),
     splashColor: AppColors.primary.withOpacity(0.3),
-    leading: Icon(icon),
-    iconColor: AppColors.primary,
+    leading: Icon(icon, color: AppColors.primary),
     title: headingText(txt, AppColors.primary),
     onTap: () async {
-      if (await canLaunch(link)) {
-        // ignore: deprecated_member_use
-        await launch(link);
+      final Uri uri = Uri.parse(link);
+      if (await canLaunchUrl(uri)) {
+        await launchUrl(uri);
       } else {
-        throw 'Could not launch';
+        toastShowText("Could not launch");
       }
-      // ignore: use_build_context_synchronously
       Navigator.pop(context);
     },
-    // onTap: () {
-    //   if (link == null) {
-    //     toastShowText('Page Not Available');
-    //   } else {
-    //     Get.toNamed(page);
-    //   }
-    // },
   );
 }

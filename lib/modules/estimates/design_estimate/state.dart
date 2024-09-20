@@ -2,19 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class DesignEstimateState {
-  TextEditingController? typeBuilding;
+  RxBool isLoading = false.obs;
+  RxBool showResult = false.obs;
+  Rxn<String> typeBuilding = Rxn<String>();
+
   TextEditingController? areaLength;
   TextEditingController? areaWidth;
   TextEditingController? areaSqFt;
   TextEditingController? result;
 
-  // buildingType;
-  // Architecture
-  // Structural
-  RxBool isLoading = false.obs;
-  RxBool showResult = false.obs;
   stateClear() {
-    typeBuilding?.clear();
+    typeBuilding.value = 'Select Design Type'; // Reset to the default "0" value
     areaLength?.clear();
     areaWidth?.clear();
     areaSqFt?.clear();
@@ -24,8 +22,6 @@ class DesignEstimateState {
   }
 
   DesignEstimateState() {
-    ///Initialize variables
-    typeBuilding = TextEditingController();
     areaLength = TextEditingController();
     areaWidth = TextEditingController();
     areaSqFt = TextEditingController();

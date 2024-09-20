@@ -56,82 +56,47 @@ class _InputDropdownFieldAppState extends State<InputDropdownFieldApp> {
       ],
     );
   }
-
 }
 
+class CustomDropdown extends StatelessWidget {
+  final String? selectedValue; // Holds the selected value
+  final List<String> options; // List of options for the dropdown
+  final String hint; // Hint text
+  final Function(String?) onChanged; // Callback for value change
+  final String? Function(String?)?
+      validator; // Validator function for form validation
+  final String validText; // Hint text
 
-class InputDropDown extends StatefulWidget {
-  final String label;
-  final String hint;
-  final TextEditingController controller;
-  final List<String> options;
-  final FormFieldValidator<String>? validator;
-  final Function? onClear; // New callback function to manage clear action
-
-  const InputDropDown({
+  const CustomDropdown({
     super.key,
-    required this.label,
-    required this.hint,
-    required this.controller,
+    required this.selectedValue,
     required this.options,
+    required this.onChanged,
+    this.hint = "Select an option",
+    required this.validText,
     this.validator,
-    this.onClear, // Accepting the function as an argument
   });
 
   @override
-  State<InputDropDown> createState() => _InputDropDownState();
-}
-
-class _InputDropDownState extends State<InputDropDown> {
-  String? selectedValue;
-
-  // Function to clear the selected value and the text in the controller
-  void clearSelection() {
-    setState(() {
-      selectedValue = null; // Reset selected value
-      widget.controller.clear(); // Clear the controller text
-    });
-
-    if (widget.onClear != null) {
-      widget.onClear!(); // Call the callback if provided
-    }
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        headingText(widget.label),
-        sizeBox(5),
-        DropdownButtonFormField<String>(
-          value: selectedValue,
-          hint: Text(widget.hint),
-          items: widget.options
-              .map((option) => DropdownMenuItem(
-                    value: option,
-                    child: Text(option),
-                  ))
-              .toList(),
-          onChanged: (value) {
-            setState(() {
-              selectedValue = value;
-              widget.controller.text = value!;
-            });
-          },
-          decoration: const InputDecoration(
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.all(Radius.circular(5)),
-            ),
-          ),
-          validator: widget.validator,
+    return DropdownButtonFormField<String>(
+      focusColor: Colors.transparent,
+      value: selectedValue, // Set the selected value
+      hint: Text(hint),
+      items: options
+          .map((option) => DropdownMenuItem(
+                value: option,
+                child: Text(option),
+              ))
+          .toList(),
+      onChanged: onChanged, // Update the selected value
+      decoration: const InputDecoration(
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.all(Radius.circular(5)),
         ),
-        // sizeBox(10),
-        // ElevatedButton(
-        //   onPressed: clearSelection, // Button to trigger the clear function
-        //   child: const Text('Clear Selection'),
-        // ),
-      ],
+      ),
+      validator: (value) =>
+          value == null || value == validText ? "required" : null,
     );
   }
 }
