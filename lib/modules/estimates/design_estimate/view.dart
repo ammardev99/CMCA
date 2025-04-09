@@ -8,6 +8,7 @@ import 'package:cmca/widgets/app_bar.dart';
 import 'package:cmca/widgets/estimate_buttons.dart';
 import 'package:cmca/widgets/formatting.dart';
 import 'package:cmca/widgets/input_form_field.dart';
+import 'package:screenshot/screenshot.dart';
 import 'logic.dart';
 
 class DesignEstimatePage extends StatelessWidget {
@@ -69,63 +70,79 @@ class DesignEstimatePage extends StatelessWidget {
               sizeBox(30),
               Obx(() {
                 if (state.showResult.value) {
-                  return Container(
-                    padding: const EdgeInsets.all(15),
-                    decoration: BoxDecoration(
-                      color: AppColors.grey,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Column(
-                      children: [
-                        titleText('Design Estinate'),
-                        const Divider(
-                          color: AppColors.primary,
-                        ),
-                        sizeBox(5),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            infoText("Design Type", AppColors.primary),
-                            infoText(state.typeBuilding.value.toString()),
-                          ],
-                        ),
-                        sizeBox(5),
-                        const Divider(),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            infoText("Area", AppColors.primary),
-                            infoText(logic.getSqFt().toString()),
-                          ],
-                        ),
-                        sizeBox(5),
-                        const Divider(),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            infoText("Duration", AppColors.primary),
-                            infoText('2 Days'),
-                          ],
-                        ),
-                        sizeBox(5),
-                        const Divider(),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            infoText("Design Cost", AppColors.primary),
-                            infoText('00', AppColors.primary),
-                          ],
-                        ),
-                        sizeBox(5),
-                        const Divider(),
-                      ],
+                  return Screenshot(
+                    controller: logic.screenshotController,
+                    child: Container(
+                      padding: const EdgeInsets.all(15),
+                      decoration: BoxDecoration(
+                        color: Colors.grey.shade200,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Column(
+                        children: [
+                          titleText('Design Estinate'),
+                          infoText(logic.getDate()),
+                          const Divider(
+                            color: AppColors.primary,
+                          ),
+                          sizeBox(10),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              infoText("Design Type", AppColors.primary),
+                              infoText(state.typeBuilding.value.toString()),
+                            ],
+                          ),
+                          sizeBox(10),
+                          const Divider(),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              infoText("Area", AppColors.primary),
+                              infoText('${logic.getSqFt()} sq ft'),
+                            ],
+                          ),
+                          sizeBox(10),
+                          const Divider(),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              infoText("Duration", AppColors.primary),
+                              infoText("1 Week"),
+                            ],
+                          ),
+                          sizeBox(5),
+                          const Divider(),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              infoText("Design Cost", AppColors.primary),
+                              infoText('Rs: ${logic.getCost().toString()}',
+                                  AppColors.primary),
+                            ],
+                          ),
+                          sizeBox(5),
+                          const Divider(),
+                          infoText(
+                            'system generated cost',
+                          ),
+                          sizeBox(5),
+                          const Divider(),
+                          sizeBox(5),
+                          OutlinedButton.icon(
+                              onPressed: () {
+                                logic.saveToGallery(context);
+                              },
+                              icon: const Icon(Icons.download,),
+                              label: const Text('Save to Gallery'))
+                        ],
+                      ),
                     ),
                   );
                 } else {
                   return const Text('');
                 }
               }),
-
               sizeBox(15),
             ]),
           )),

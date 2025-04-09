@@ -6,7 +6,7 @@ Widget myLodaing([double? size]) {
     width: size ?? 30,
     child: CircularProgressIndicator(
       strokeWidth: 3,
-      color: Colors.white.withOpacity(0.8),
+      color: Colors.white..withAlpha(77),
     ),
   );
 }

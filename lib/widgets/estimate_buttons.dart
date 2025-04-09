@@ -40,9 +40,9 @@ class EstimateActionButtons extends StatelessWidget {
           child: OutlinedButton(
             onPressed: stateClear,
             style: OutlinedButton.styleFrom(
-              side: BorderSide(color: AppColors.black.withOpacity(0.4)),
+              side: BorderSide(color: AppColors.black.withAlpha(102)),
             ),
-            child: headingText('Clear', AppColors.black.withOpacity(0.4)),
+            child: headingText('Clear', AppColors.black.withAlpha(102)),
           ),
         ),
       ],

@@ -11,17 +11,17 @@ Widget estimateOptionCard(ModuleOption objOption) {
         objOption.route,
       );
     },
-    splashColor: objOption.color.withOpacity(0.3),
+    splashColor: objOption.color.withAlpha(77),
     borderRadius: BorderRadius.circular(15),
     child: Container(
       padding: const EdgeInsets.all(10),
       width: 160,
       height: 180,
       decoration: BoxDecoration(
-          color: objOption.color.withOpacity(0.1),
+          color: objOption.color.withAlpha(26),
           borderRadius: BorderRadius.circular(10),
           border:
-              Border.all(width: 1, color: objOption.color.withOpacity(0.5))),
+              Border.all(width: 1, color: objOption.color.withAlpha(128))),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [

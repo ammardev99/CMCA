@@ -10,14 +10,14 @@ Widget menuOptionLink(
       border: Border(bottom: BorderSide(color: AppColors.secondary)),
     ),
     child: ListTile(
-        hoverColor: AppColors.primary.withOpacity(0.3),
-        splashColor: AppColors.primary.withOpacity(0.3),
+        hoverColor: AppColors.primary.withAlpha(77),
+        splashColor: AppColors.primary.withAlpha(77),
         leading: Icon(icon),
         iconColor: AppColors.primary,
         title: headingText(txt, Colors.grey),
         trailing: Icon(
           Icons.chevron_right,
-          color: AppColors.primary.withOpacity(0.3),
+          color: AppColors.primary.withAlpha(77),
         ),
         onTap: () async {
           showDialog(
@@ -34,7 +34,7 @@ Widget menuOptionLink(
                   TextButton(
                     style: ButtonStyle(
                         backgroundColor: WidgetStatePropertyAll(
-                            AppColors.primary.withOpacity(0.3))),
+                            AppColors.primary.withAlpha(77))),
                     onPressed: () async {
                       // ignore: deprecated_member_use
                       if (await canLaunch(url)) {
@@ -49,7 +49,7 @@ Widget menuOptionLink(
                     child: Text(
                       'Open',
                       style: TextStyle(
-                          color: AppColors.primary.withOpacity(0.3),
+                          color: AppColors.primary.withAlpha(77),
                           fontWeight: FontWeight.w600),
                     ),
                   ),

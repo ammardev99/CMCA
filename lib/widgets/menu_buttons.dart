@@ -7,8 +7,8 @@ import 'package:url_launcher/url_launcher.dart';
 
 Widget menuOptionPage(IconData icon, String txt, [String? page]) {
   return ListTile(
-    hoverColor: AppColors.primary.withOpacity(0.3),
-    splashColor: AppColors.primary.withOpacity(0.3),
+    hoverColor: AppColors.primary.withAlpha(77),
+    splashColor: AppColors.primary.withAlpha(77),
     leading: Icon(icon),
     iconColor: AppColors.primary,
     title: headingText(txt, AppColors.primary),
@@ -24,8 +24,8 @@ Widget menuOptionPage(IconData icon, String txt, [String? page]) {
 
 Widget menuLinkOption(IconData icon, String txt, String link, BuildContext context) {
   return ListTile(
-    hoverColor: AppColors.primary.withOpacity(0.3),
-    splashColor: AppColors.primary.withOpacity(0.3),
+    hoverColor: AppColors.primary.withAlpha(77),
+    splashColor: AppColors.primary.withAlpha(77),
     leading: Icon(icon, color: AppColors.primary),
     title: headingText(txt, AppColors.primary),
     onTap: () async {
@@ -35,6 +35,7 @@ Widget menuLinkOption(IconData icon, String txt, String link, BuildContext conte
       } else {
         toastShowText("Could not launch");
       }
+      // ignore: use_build_context_synchronously
       Navigator.pop(context);
     },
   );
