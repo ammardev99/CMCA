@@ -30,7 +30,7 @@ class IconWithLabel extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 4),
-        infoText("text")
+        infoText(label)
       ],
     );
   }

@@ -71,7 +71,6 @@ class _DesignCostState extends State<DesignCost> {
                     }
                   }),
               sizeBox(30),
-              sizeBox(15),
             ]),
           )),
     ));

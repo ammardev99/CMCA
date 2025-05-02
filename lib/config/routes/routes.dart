@@ -1,6 +1,6 @@
 import 'package:cmca/modules/about_us.dart';
 import 'package:cmca/modules/auth/login/view.dart';
-import 'package:cmca/view/design_estimate/view.dart';
+import 'package:cmca/modules/design_estimate/view.dart';
 import 'package:cmca/config/routes/routes_name.dart';
 import 'package:cmca/view/estimations/design_cost.dart';
 import 'package:get/get.dart';
