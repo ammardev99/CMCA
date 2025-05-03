@@ -3,14 +3,14 @@ class RouteName {
   static const String aboutUs = '/aboutUs';
 }
 
-class EstimateForm {
-  static const String designEstimate = '/designEstimatePage';
+class AppRouts {
   static const String designCost = '/designCost';
-  // static const String foundationEstimate = '/FoundationEstimatePage';
-  // static const String masonryEstimate = '/MasonryEstimatePage';
-  // static const String roofEstimate = '/roofEstimatePage';
-  // static const String finishingEstimate = '/FinishingEstimatePage';
-  // static const String plumbingEstimate = '/plumbingEstimatePage';
-  // static const String electricalEstimate = '/electricalEstimatePage';
-  // static const String furnitureEstimate = '/furnitureEstimatePage';
+  static const String foundationCost = '/foundationCost';
+  static const String masonryCost = '/masonryCost';
+  static const String roofCost = '/roofCost';
+  static const String electricalCost = '/electricalCost';
+  static const String plumbingCost = '/plumbingCost';
+  static const String finishingCost = '/finishingCost';
+  static const String furnitureCost = '/furnitureCost';
+  //
 }

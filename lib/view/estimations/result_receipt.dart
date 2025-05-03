@@ -11,8 +11,9 @@ import '../../config/config_io.dart';
 import '../../widgets/widgets_io.dart';
 
 class ResultReceiptScreen extends StatefulWidget {
-  final Widget listData;
   const ResultReceiptScreen({super.key, required this.listData});
+
+  final Widget listData;
 
   @override
   State<ResultReceiptScreen> createState() => _ResultReceiptScreenState();
@@ -21,8 +22,15 @@ class ResultReceiptScreen extends StatefulWidget {
 class _ResultReceiptScreenState extends State<ResultReceiptScreen>
     with SingleTickerProviderStateMixin {
   final GlobalKey previewContainer = GlobalKey();
+
   late AnimationController _controller;
   late Animation<Offset> _slideAnimation;
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 
   @override
   void initState() {
@@ -37,12 +45,6 @@ class _ResultReceiptScreenState extends State<ResultReceiptScreen>
       end: Offset(0, 0), // final position
     ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeOut));
     _controller.forward();
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
   }
 
   Future<void> captureAndShare() async {
