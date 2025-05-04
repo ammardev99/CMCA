@@ -59,14 +59,14 @@ class _ResultReceiptScreenState extends State<ResultReceiptScreen>
 
       final tempDir = await getTemporaryDirectory();
       final file =
-          await File('${tempDir.path}/poultry_estimation_receipt.png').create();
+          await File('${tempDir.path}/cmca_estimation_receipt.png').create();
       await file.writeAsBytes(pngBytes);
 
       // ignore: deprecated_member_use
       await Share.shareXFiles(
         [XFile(file.path)],
         text:
-            'Here is your Poultry Estimation receipt,\nDownload Free our app on PlayStore \nFollow us @Poul3y',
+            'Here is your Civil Estimation receipt,\nFree Download our app on PlayStore \nFollow us @CMCA By Eng. Saqib Faraz',
       );
     } catch (e) {
       Get.snackbar("Error", "Failed to capture and share image.");
@@ -117,7 +117,7 @@ class _ResultReceiptScreenState extends State<ResultReceiptScreen>
                                 const Divider(thickness: 1, height: 20),
                                 headingText('Thank You!'),
                                 gapBox(3),
-                                infoText('Powered by Saqib Faraz'),
+                                infoText('Powered by Eng. Saqib Faraz'),
                               ],
                             ),
                           ),

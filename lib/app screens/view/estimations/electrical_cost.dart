@@ -31,7 +31,7 @@ class _ElectricalCostState extends State<ElectricalCost> {
                 sizeBox(15),
                 InputFormFieldApp(
                   label: "Kitchens",
-                  hint: 'Enter 00.0 ft',
+                  hint: 'Enter 00',
                   controller: controller.noKitchens,
                   inputType: TextInputType.number,
                   validator: validateValue,
@@ -39,7 +39,7 @@ class _ElectricalCostState extends State<ElectricalCost> {
                 sizeBox(15),
                 InputFormFieldApp(
                   label: "Rooms",
-                  hint: 'Enter 00.0 ft',
+                  hint: 'Enter 00',
                   controller: controller.noRooms,
                   inputType: TextInputType.number,
                   validator: validateValue,
@@ -47,7 +47,7 @@ class _ElectricalCostState extends State<ElectricalCost> {
                 sizeBox(15),
                 InputFormFieldApp(
                   label: "Washrooms",
-                  hint: 'Enter 00.0 ft',
+                  hint: 'Enter 00',
                   controller: controller.noWashrooms,
                   inputType: TextInputType.number,
                   validator: validateValue,

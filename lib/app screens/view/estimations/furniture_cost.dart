@@ -31,7 +31,7 @@ class _FurnitureCostState extends State<FurnitureCost> {
                 sizeBox(15),
                 InputFormFieldApp(
                   label: "Bed",
-                  hint: 'Enter 00.0 ft',
+                  hint: 'Enter 00',
                   controller: controller.bedCount,
                   inputType: TextInputType.number,
                   validator: validateValue,
@@ -39,7 +39,7 @@ class _FurnitureCostState extends State<FurnitureCost> {
                 sizeBox(15),
                 InputFormFieldApp(
                   label: "cabinet",
-                  hint: 'Enter 00.0 ft',
+                  hint: 'Enter 00',
                   controller: controller.cabinetCount,
                   inputType: TextInputType.number,
                   validator: validateValue,
@@ -47,7 +47,7 @@ class _FurnitureCostState extends State<FurnitureCost> {
                 sizeBox(15),
                 InputFormFieldApp(
                   label: "Side Table",
-                  hint: 'Enter 00.0 ft',
+                  hint: 'Enter 00',
                   controller: controller.sideTableCount,
                   inputType: TextInputType.number,
                   validator: validateValue,
@@ -55,7 +55,7 @@ class _FurnitureCostState extends State<FurnitureCost> {
                 sizeBox(15),
                 InputFormFieldApp(
                   label: "Sofa",
-                  hint: 'Enter 00.0 ft',
+                  hint: 'Enter 00',
                   controller: controller.sofaCount,
                   inputType: TextInputType.number,
                   validator: validateValue,

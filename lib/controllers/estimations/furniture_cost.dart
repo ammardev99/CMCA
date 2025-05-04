@@ -35,7 +35,7 @@ class FurnitureCostController extends GetxController {
             "Side Table x$sideTables": "Rs. ${sideTables * sideTableCost}",
             "Cabinet x$cabinets": "Rs. ${cabinets * cabinetCost}",
             "Sofa x$sofas": "Rs. ${sofas * sofaCost}",
-            "🪑 Total Furniture Cost": "Rs. $totalCost",
+            "Total Furniture Cost": "Rs. $totalCost",
           },
         ),
       ),

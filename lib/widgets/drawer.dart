@@ -25,7 +25,7 @@ Drawer customDrawer(BuildContext context) {
           // menuOptionPage(Icons.star_border,'Rate App',),
           // menuOptionPage(Icons.sync,'Update App',),
           menuOptionPage(Icons.logout, 'Log out', RouteName.authlogin),
-          sizeBox(80),
+          sizeBox(60),
           lottieAnimation('assets/animations/masonry.json', 300, true),
         ]),
       ),

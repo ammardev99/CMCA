@@ -28,7 +28,7 @@ class PlumbingCostController extends GetxController {
             "Washrooms": "$washrooms",
             "Kitchen Pipe Required": "$kitchenPipes ft",
             "Washroom Pipe Required": "$washroomPipes ft",
-            "🔧 Total Pipe Required": "$totalPipes ft",
+            "Total Pipe Required": "$totalPipes ft",
             "Estimated Cost": "Rs. $estimatedCost"
           },
         ),

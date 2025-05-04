@@ -31,7 +31,7 @@ class _PlumbingCostState extends State<PlumbingCost> {
                 sizeBox(15),
                 InputFormFieldApp(
                   label: "Kitchens",
-                  hint: 'Enter 00.0 ft',
+                  hint: 'Enter 00',
                   controller: controller.noKitchens,
                   inputType: TextInputType.number,
                   validator: validateValue,
@@ -39,7 +39,7 @@ class _PlumbingCostState extends State<PlumbingCost> {
                 sizeBox(15),
                 InputFormFieldApp(
                   label: "Washrooms",
-                  hint: 'Enter 00.0 ft',
+                  hint: 'Enter 00',
                   controller: controller.noWashrooms,
                   inputType: TextInputType.number,
                   validator: validateValue,
