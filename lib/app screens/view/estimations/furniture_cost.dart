@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../config/config_io.dart';
-import '../../controllers/controller_io.dart';
-import '../../widgets/widgets_io.dart';
+import '../../../config/config_io.dart';
+import '../../../controllers/controller_io.dart';
+import '../../../widgets/widgets_io.dart';
 
-class ElectricalCost extends StatefulWidget {
-  const ElectricalCost({super.key});
+class FurnitureCost extends StatefulWidget {
+  const FurnitureCost({super.key});
 
   @override
-  State<ElectricalCost> createState() => _ElectricalCostState();
+  State<FurnitureCost> createState() => _FurnitureCostState();
 }
 
-class _ElectricalCostState extends State<ElectricalCost> {
-  final controller = Get.put(ElectricalCostController());
+class _FurnitureCostState extends State<FurnitureCost> {
+  final controller = Get.put(FurnitureCostController());
   final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: customInfoAppBar("Electrical", context),
+        appBar: customInfoAppBar("Furniture", context),
         body: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           physics: const BouncingScrollPhysics(),
@@ -30,25 +30,33 @@ class _ElectricalCostState extends State<ElectricalCost> {
               children: [
                 sizeBox(15),
                 InputFormFieldApp(
-                  label: "Kitchens",
+                  label: "Bed",
                   hint: 'Enter 00.0 ft',
-                  controller: controller.noKitchens,
+                  controller: controller.bedCount,
                   inputType: TextInputType.number,
                   validator: validateValue,
                 ),
                 sizeBox(15),
                 InputFormFieldApp(
-                  label: "Rooms",
+                  label: "cabinet",
                   hint: 'Enter 00.0 ft',
-                  controller: controller.noRooms,
+                  controller: controller.cabinetCount,
                   inputType: TextInputType.number,
                   validator: validateValue,
                 ),
                 sizeBox(15),
                 InputFormFieldApp(
-                  label: "Washrooms",
+                  label: "Side Table",
                   hint: 'Enter 00.0 ft',
-                  controller: controller.noWashrooms,
+                  controller: controller.sideTableCount,
+                  inputType: TextInputType.number,
+                  validator: validateValue,
+                ),
+                sizeBox(15),
+                InputFormFieldApp(
+                  label: "Sofa",
+                  hint: 'Enter 00.0 ft',
+                  controller: controller.sofaCount,
                   inputType: TextInputType.number,
                   validator: validateValue,
                 ),
@@ -58,7 +66,7 @@ class _ElectricalCostState extends State<ElectricalCost> {
                   label: "Calculate",
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
-                      controller.calculateElectricalCost();
+                      controller.calculateFurnitureCost();
                     } else {
                       // print("Form validation failed.");
                     }

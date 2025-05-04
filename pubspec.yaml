@@ -2,7 +2,7 @@ name: cmca
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -36,8 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   get: ^4.7.2
   animated_splash_screen: ^1.3.0
-  rename_app: ^1.6.1
-  flutter_launcher_icons: ^0.14.3
+  rename_app: ^1.6.3
   flutter_svg: ^2.0.10+1
   fluttertoast: ^8.2.5
   url_launcher: ^6.3.0
@@ -45,6 +44,13 @@ dependencies:
   intl: ^0.20.2
   share_plus: ^11.0.0
   path_provider: ^2.1.5
+  flutter_launcher_icons: ^0.14.3
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/png/app_icon.png"
+  min_sdk_android: 21
 
 dev_dependencies:
   flutter_test:

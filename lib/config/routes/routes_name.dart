@@ -1,5 +1,5 @@
 class RouteName {
-  static const String login = '/login';
+  static const String authlogin = '/authlogin';
   static const String aboutUs = '/aboutUs';
 }
 

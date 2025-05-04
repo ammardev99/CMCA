@@ -1,10 +1,10 @@
-import 'package:cmca/models/list_data.dart';
+import 'package:cmca/models/builder_class_types.dart';
 import 'package:cmca/widgets/custom_select_dropdown.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../config/config_io.dart';
-import '../../controllers/controller_io.dart';
-import '../../widgets/widgets_io.dart';
+import '../../../config/config_io.dart';
+import '../../../controllers/controller_io.dart';
+import '../../../widgets/widgets_io.dart';
 
 class DesignCost extends StatefulWidget {
   const DesignCost({super.key});
@@ -30,12 +30,9 @@ class _DesignCostState extends State<DesignCost> {
             key: _formKey,
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              //   label: "Enter designType",
-              //   label: "Enter totalArea",
               headingText('Design Class'),
               sizeBox(5),
               CustomListDropdown(
-                // selectedValue: "Medium",
                 items: designClass,
                 hintText: "Select Design Type",
                 onChanged: (value) {

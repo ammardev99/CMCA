@@ -7,8 +7,8 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:share_plus/share_plus.dart';
-import '../../config/config_io.dart';
-import '../../widgets/widgets_io.dart';
+import '../../../config/config_io.dart';
+import '../../../widgets/widgets_io.dart';
 
 class ResultReceiptScreen extends StatefulWidget {
   const ResultReceiptScreen({super.key, required this.listData});

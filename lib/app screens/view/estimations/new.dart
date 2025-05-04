@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../config/config_io.dart';
-import '../../controllers/controller_io.dart';
-import '../../widgets/widgets_io.dart';
+import '../../../config/config_io.dart';
+import '../../../controllers/controller_io.dart';
+import '../../../widgets/widgets_io.dart';
 
-class FinishingCost extends StatefulWidget {
-  const FinishingCost({super.key});
+class FoundationCost extends StatefulWidget {
+  const FoundationCost({super.key});
 
   @override
-  State<FinishingCost> createState() => _FinishingCostState();
+  State<FoundationCost> createState() => _FoundationCostState();
 }
 
-class _FinishingCostState extends State<FinishingCost> {
-  final controller = Get.put(FinishingCostController());
+class _FoundationCostState extends State<FoundationCost> {
+  final controller = Get.put(FoundationCostController());
   final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: customInfoAppBar("Finishing", context),
+        appBar: customInfoAppBar("Foundation", context),
         body: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           physics: const BouncingScrollPhysics(),
@@ -30,17 +30,9 @@ class _FinishingCostState extends State<FinishingCost> {
               children: [
                 sizeBox(15),
                 InputFormFieldApp(
-                  label: "Wall Height",
+                  label: "Wall Depth",
                   hint: 'Enter 00.0 ft',
-                  controller: controller.wallHeight,
-                  inputType: TextInputType.number,
-                  validator: validateValue,
-                ),
-                sizeBox(15),
-                InputFormFieldApp(
-                  label: "Wall Length",
-                  hint: 'Enter 00.0 ft',
-                  controller: controller.wallLength,
+                  controller: controller.wallDepthOrHeight,
                   inputType: TextInputType.number,
                   validator: validateValue,
                 ),
@@ -50,7 +42,7 @@ class _FinishingCostState extends State<FinishingCost> {
                   label: "Calculate",
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
-                      controller.calculateFinishingCost();
+                      controller.calculateFoundationCost();
                     } else {
                       // print("Form validation failed.");
                     }

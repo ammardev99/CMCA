@@ -1,5 +1,5 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
-import 'package:cmca/modules/auth/login/view.dart';
+import 'package:cmca/app%20screens/view/auth_login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
               infoText('Malik Saqib Faraz & Ammar Shafiq', Colors.grey.shade500)
             ],
           ),
-          nextScreen: LoginPage()),
+          nextScreen: AuthLogin()),
     );
   }
 }

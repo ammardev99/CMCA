@@ -1,20 +1,20 @@
-import 'package:cmca/modules/about_us.dart';
-import 'package:cmca/modules/auth/login/view.dart';
+import 'package:cmca/app%20screens/about_us.dart';
 import 'package:cmca/config/routes/routes_name.dart';
-import 'package:cmca/view/estimations/design_cost.dart';
-import 'package:cmca/view/estimations/plumbing_cost.dart';
+import 'package:cmca/app%20screens/view/estimations/design_cost.dart';
+import 'package:cmca/app%20screens/view/estimations/plumbing_cost.dart';
 import 'package:get/get.dart';
 
-import '../../view/estimations/electrical_cost.dart';
-import '../../view/estimations/finishing_cost.dart';
-import '../../view/estimations/foundation_cost.dart';
-import '../../view/estimations/furniture_cost.dart';
-import '../../view/estimations/masonry_cost.dart';
-import '../../view/estimations/roof_cost.dart';
+import '../../app screens/view/auth_login.dart';
+import '../../app screens/view/estimations/electrical_cost.dart';
+import '../../app screens/view/estimations/finishing_cost.dart';
+import '../../app screens/view/estimations/foundation_cost.dart';
+import '../../app screens/view/estimations/furniture_cost.dart';
+import '../../app screens/view/estimations/masonry_cost.dart';
+import '../../app screens/view/estimations/roof_cost.dart';
 
 class AppRoutes {
   static appRoutes() => [
-    GetPage(name: RouteName.login, page: () => LoginPage()),
+    GetPage(name: RouteName.authlogin, page: () => AuthLogin()),
     GetPage(name: RouteName.aboutUs, page: () => const AboutUs()),
     GetPage(name: AppRouts.designCost, page: () => const DesignCost()),
     GetPage(name: AppRouts.foundationCost, page: () => FoundationCost()),

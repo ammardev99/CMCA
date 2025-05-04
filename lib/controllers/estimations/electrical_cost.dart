@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
-import '../../view/estimations/result_receipt.dart';
+import '../../app screens/view/estimations/result_receipt.dart';
 import '../../widgets/widgets_io.dart';
 
 class ElectricalCostController extends GetxController {
